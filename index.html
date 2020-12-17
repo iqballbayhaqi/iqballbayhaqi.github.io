@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yugioh Card Battle</title>
+    <link rel="stylesheet" href="./style/index.css" />
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/" />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="assets//apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="assets//apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="assets//apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="assets//apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="assets//apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="assets//apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="assets//apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets//apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets//android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets//favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="assets//favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets//favicon-16x16.png"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <div class="header-container">
+      <button id="button-open-list-card" class="styled-button">
+        Detail List Card
+      </button>
+      <img src="assets/img/yugioh.png" alt="yugioh" class="title" />
+      <button class="styled-button" onclick="location.reload()">
+        Restart Game
+      </button>
+    </div>
+
+    <!-- Modal Select Card Theme -->
+    <div id="modal-select-cards-theme" class="modal" style="display: block">
+      <div class="status-container modal-content" id="content-card-theme">
+        <h2 style="text-align: center">Select Deck Of Cards</h2>
+        <div
+          class="status-container styled-button"
+          style="display: flex; align-items: center"
+          id="bumi_langit"
+        >
+          <img src="assets/img/bumilangit.png" alt="" style="height: 75px" />
+          <h2 style="padding-left: 10px">Bumi Langit Universe</h2>
+        </div>
+        <div
+          class="status-container styled-button"
+          style="display: flex; align-items: center"
+          id="marvel"
+        >
+          <img src="assets/img/marvel.png" alt="" style="height: 50px" />
+          <h2 style="padding-left: 10px">Marvel Universe</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="body-table">
+      <div class="status-container">
+        <h3 class="styled-bottom-border">Your status</h3>
+        <p class="styled-bottom-border">
+          WIN : <span id="my-status-win"></span>
+        </p>
+        <p class="styled-bottom-border">
+          LOSE : <span id="my-status-lose"></span>
+        </p>
+        <p class="styled-bottom-border">
+          DRAW : <span id="my-status-draw"></span>
+        </p>
+      </div>
+      <div>
+        <div class="card-container">
+          <div id="enemy-card-container">
+            <img
+              src="assets/img/back_card.jpg"
+              alt="yugioh"
+              class="card"
+              id="enemy-card-1"
+            />
+            <img
+              src="assets/img/back_card.jpg"
+              alt="yugioh"
+              class="card"
+              id="enemy-card-2"
+            />
+            <img
+              src="assets/img/back_card.jpg"
+              alt="yugioh"
+              class="card"
+              id="enemy-card-3"
+            />
+            <img
+              src="assets/img/back_card.jpg"
+              alt="yugioh"
+              class="card"
+              id="enemy-card-4"
+            />
+            <img
+              src="assets/img/back_card.jpg"
+              alt="yugioh"
+              class="card"
+              id="enemy-card-5"
+            />
+          </div>
+        </div>
+
+        <div style="text-align: center">
+          <button class="styled-button" id="button-start-game">
+            START GAME AND SHUFFLE CARDS
+          </button>
+        </div>
+
+        <div class="card-container" id="our-card-container">
+          <div id="our-card-container-null">
+            <img src="assets/img/back_card.jpg" alt="yugioh" class="card" />
+            <img src="assets/img/back_card.jpg" alt="yugioh" class="card" />
+            <img src="assets/img/back_card.jpg" alt="yugioh" class="card" />
+            <img src="assets/img/back_card.jpg" alt="yugioh" class="card" />
+            <img src="assets/img/back_card.jpg" alt="yugioh" class="card" />
+          </div>
+        </div>
+      </div>
+      <div class="status-container">
+        <h3 class="styled-bottom-border">Enemy status</h3>
+        <p class="styled-bottom-border">
+          WIN : <span id="enemy-status-win"></span>
+        </p>
+        <p class="styled-bottom-border">
+          LOSE : <span id="enemy-status-lose"></span>
+        </p>
+        <p class="styled-bottom-border">
+          DRAW : <span id="enemy-status-draw"></span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Modal Confirmation Select Card -->
+    <div id="modalConfirmationSelectCard" class="modal">
+      <div class="status-container modal-content flex-center-center">
+        <div id="selected-card-modal">
+          <img
+            src="assets/img/naruto.jpeg"
+            alt="yugioh"
+            class="card our-card"
+          />
+        </div>
+        <div style="padding-left: 30px">
+          <h2>
+            Are you sure want to use
+            <span id="selected-card-modal-name">this card</span> ?
+          </h2>
+          <p>
+            Attack Point
+            <span id="selected-card-modal-attack-point">9000</span> ⚔️
+          </p>
+          <p>
+            Defense Point
+            <span id="selected-card-modal-deffense-point">9000</span> 🛡
+          </p>
+          <div>
+            <button id="cancelUseCard" class="styled-button">Cancel</button>
+            <button
+              id="button-fight"
+              class="styled-button"
+              style="margin-left: 10px"
+            >
+              Yep!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal List Card -->
+    <div id="modalListCard" class="modal">
+      <div class="status-container modal-content">
+        <h1 style="text-align: center" class="styled-bottom-border">
+          List Available Card
+        </h1>
+        <table style="width: 100%">
+          <tbody id="table-list-card" class="table-list-card">
+            <tr>
+              <th>Character 👾</th>
+              <th style="text-align: center">Attack Point ⚔️</th>
+              <th style="text-align: center">Deffense Point 🛡</th>
+            </tr>
+            <!-- di isi dari function js index.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Modal Fight -->
+    <div id="modalFight" class="modal">
+      <div class="status-container modal-content" id="content-modal-fight">
+        <!-- di isi dari function js index.js -->
+      </div>
+    </div>
+
+    <!-- Modal Fight Loading -->
+    <div id="modalFightLoading" class="modal">
+      <div
+        class="status-container modal-content"
+        style="width: fit-content; text-align: center"
+      >
+        <img src="assets/img/fight.webp" style="height: 100px" />
+        <button
+          id="button-show-result"
+          class="styled-button"
+          style="width: -webkit-fill-available"
+        >
+          Show Result
+        </button>
+      </div>
+    </div>
+
+    <p class="credit">
+      <a href="https://github.com/iqballbayhaqi">by : iqballbayhaqi</a>
+    </p>
+    <audio id="yoo">
+      <source src="assets/sound/yoo.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+    <audio loop id="backsound">
+      <source
+        src="assets/sound/Maka-Symphony-Dragon-Castle.mp3"
+        type="audio/mp3"
+      />
+      Your browser does not support the audio element.
+    </audio>
+    <script src="js/memory.js"></script>
+    <script src="index.js"></script>
+    <script>
+      // variabel modal
+      const modalConfirmationSelectCard = document.getElementById(
+        "modalConfirmationSelectCard"
+      );
+      const modalListCard = document.getElementById("modalListCard");
+      const modalFight = document.getElementById("modalFight");
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modalConfirmationSelectCard) {
+          modalConfirmationSelectCard.style.display = "none";
+        } else if (event.target == modalListCard) {
+          modalListCard.style.display = "none";
+        }
+      };
+    </script>
+  </body>
+</html>
